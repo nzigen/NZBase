@@ -1,0 +1,22 @@
+{
+  "name": "NZBase",
+  "version": "0.1.0",
+  "summary": "A short description of NZBase.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Yoshihiro Sawa/NZBase",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Yoshihiro Sawa": "yoshihirosawa@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Yoshihiro Sawa/NZBase.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NZBase/Classes/**/*"
+}

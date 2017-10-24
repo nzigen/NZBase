@@ -1,0 +1,6 @@
+framework module NZBase {
+  umbrella header "NZBase-umbrella.h"
+
+  export *
+  module * { export * }
+}
