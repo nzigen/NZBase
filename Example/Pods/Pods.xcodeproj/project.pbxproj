@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DBDD653C07121F03FE0BA88D47479A5 /* NZBase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E7DD2613DFFAC125B1E6F9F70195C /* NZBase-dummy.m */; };
 		43107DB17822B395480FA4EC06B06172 /* Pods-NZBase_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F23D76A5BA5AEF4F5035F7EFDD64B709 /* Pods-NZBase_Tests-dummy.m */; };
-		51D225261F9F806900496C1F /* NZNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D225221F9F7BD300496C1F /* NZNetworkIndicator.swift */; };
+		51D2252A1F9F86FC00496C1F /* NZNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D225291F9F86FC00496C1F /* NZNetworkIndicator.swift */; };
 		56FD402AFDD5FC9BCDE9573F11697FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		BA62B77DBDA836A1432BEC3A78E7705E /* Pods-NZBase_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D82047F3913AA826A835769BAB0301C /* Pods-NZBase_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0C938D357187C5307C82ABA97519B5C /* Pods-NZBase_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DE72AE0DBBB8BE50F372374260B35A /* Pods-NZBase_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,8 +38,8 @@
 		38D2F142B1DBBD587B2AA56572C559EC /* Pods-NZBase_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NZBase_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		47BED3B2E134D93843464CEAE800BC45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E33546D8E80F011FDE5D9FA53FA5057 /* Pods-NZBase_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NZBase_Tests.modulemap"; sourceTree = "<group>"; };
-		51D225221F9F7BD300496C1F /* NZNetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NZNetworkIndicator.swift; path = NZBase/Classes/NZNetworkIndicator.swift; sourceTree = "<group>"; };
 		51D225241F9F802500496C1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		51D225291F9F86FC00496C1F /* NZNetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZNetworkIndicator.swift; sourceTree = "<group>"; };
 		52DE72AE0DBBB8BE50F372374260B35A /* Pods-NZBase_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NZBase_Example-umbrella.h"; sourceTree = "<group>"; };
 		54C2AFEC0EC05144A2E3D289A3305C6B /* Pods-NZBase_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NZBase_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -96,11 +96,20 @@
 		183FDAF7C8C79006AB8A9050235EC4C2 /* NZBase */ = {
 			isa = PBXGroup;
 			children = (
-				51D225221F9F7BD300496C1F /* NZNetworkIndicator.swift */,
+				51D225271F9F86FC00496C1F /* Classes */,
 				5B3A1781210E651CB3E3094E3EFE8671 /* Support Files */,
 			);
 			name = NZBase;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		51D225271F9F86FC00496C1F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				51D225291F9F86FC00496C1F /* NZNetworkIndicator.swift */,
+			);
+			name = Classes;
+			path = NZBase/Classes;
 			sourceTree = "<group>";
 		};
 		5B3A1781210E651CB3E3094E3EFE8671 /* Support Files */ = {
@@ -328,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D225261F9F806900496C1F /* NZNetworkIndicator.swift in Sources */,
+				51D2252A1F9F86FC00496C1F /* NZNetworkIndicator.swift in Sources */,
 				3DBDD653C07121F03FE0BA88D47479A5 /* NZBase-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
