@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NZBase_Example' do
+  pod 'NZBase', :path => '../'
+
+  target 'NZBase_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
