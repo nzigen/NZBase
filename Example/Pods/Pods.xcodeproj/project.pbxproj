@@ -16,7 +16,7 @@
 		421CDD701AEE0F2458A84200366CDD0F /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4506B3CC440A1F4D5A43E0C51A926FC3 /* Pods-NZBase_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D82047F3913AA826A835769BAB0301C /* Pods-NZBase_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		506D761F91EC3583789A837C559972FE /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C18C0EB1FED5EB5CE3B0E768AC510F /* FBSnapshotTestCase-dummy.m */; };
-		5167CB781F9F71AD00931D69 /* NZNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5167CB771F9F71AD00931D69 /* NZNetworkIndicator.swift */; };
+		51D225151F9F74EB00496C1F /* NZNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D225141F9F74EB00496C1F /* NZNetworkIndicator.swift */; };
 		56FD402AFDD5FC9BCDE9573F11697FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
 		69DA8B003216466C60F029CBD79897F1 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */; };
 		756564ABAF2892FE7140C92A1CDDCF65 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */; };
@@ -75,7 +75,7 @@
 		432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		47BED3B2E134D93843464CEAE800BC45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E33546D8E80F011FDE5D9FA53FA5057 /* Pods-NZBase_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NZBase_Tests.modulemap"; sourceTree = "<group>"; };
-		5167CB771F9F71AD00931D69 /* NZNetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NZNetworkIndicator.swift; path = NZBase/Classes/NZNetworkIndicator.swift; sourceTree = "<group>"; };
+		51D225141F9F74EB00496C1F /* NZNetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NZNetworkIndicator.swift; sourceTree = "<group>"; };
 		52C18C0EB1FED5EB5CE3B0E768AC510F /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		52DE72AE0DBBB8BE50F372374260B35A /* Pods-NZBase_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NZBase_Example-umbrella.h"; sourceTree = "<group>"; };
 		54C2AFEC0EC05144A2E3D289A3305C6B /* Pods-NZBase_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NZBase_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		183FDAF7C8C79006AB8A9050235EC4C2 /* NZBase */ = {
 			isa = PBXGroup;
 			children = (
-				5167CB771F9F71AD00931D69 /* NZNetworkIndicator.swift */,
+				51D225161F9F74F800496C1F /* Classes */,
 				5B3A1781210E651CB3E3094E3EFE8671 /* Support Files */,
 			);
 			name = NZBase;
@@ -196,6 +196,14 @@
 				99E46DD4AB2256791F111C718CB0EEF8 /* SwiftSupport */,
 			);
 			path = FBSnapshotTestCase;
+			sourceTree = "<group>";
+		};
+		51D225161F9F74F800496C1F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				51D225141F9F74EB00496C1F /* NZNetworkIndicator.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		5B3A1781210E651CB3E3094E3EFE8671 /* Support Files */ = {
@@ -459,6 +467,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					37325F7FC06DE53B562C8F14BEDCB58C = {
+						LastSwiftMigration = 0900;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -493,7 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5167CB781F9F71AD00931D69 /* NZNetworkIndicator.swift in Sources */,
+				51D225151F9F74EB00496C1F /* NZNetworkIndicator.swift in Sources */,
 				3DBDD653C07121F03FE0BA88D47479A5 /* NZBase-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +688,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80F7DC9D7ECA8FEE9AE3F9652EF3F2B9 /* NZBase.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -751,7 +765,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,7 +822,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
@@ -821,6 +835,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80F7DC9D7ECA8FEE9AE3F9652EF3F2B9 /* NZBase.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
