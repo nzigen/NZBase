@@ -1,13 +1,7 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - NZBase (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 2.1.4)
   - NZBase (from `../`)
 
 EXTERNAL SOURCES:
@@ -15,9 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   NZBase: d69c91608c956325fcdb3cdbc70174b02cb0f5d6
 
-PODFILE CHECKSUM: 38297c81dde49375c23703044e69a1d97f3c8077
+PODFILE CHECKSUM: c0952aaaa58e120f4fdb1eeb9ce75a937866665e
 
 COCOAPODS: 1.3.1

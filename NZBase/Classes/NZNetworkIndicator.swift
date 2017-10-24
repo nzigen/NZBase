@@ -7,17 +7,17 @@
 
 import UIKit
 
-class NZNetworkIndicator: NSObject {
-    static let shared = NZNetworkIndicator()
+open class NZNetworkIndicator: NSObject {
+    public static let shared = NZNetworkIndicator()
     var indicatorStopTimer: Timer?
     
-    func startIndicator() {
+    public func start() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.invalidateStopTimer()
-        self.indicatorStopTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.stopIndicator), userInfo: nil, repeats: false)
+        self.indicatorStopTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.stop), userInfo: nil, repeats: false)
     }
     
-    @objc func stopIndicator() {
+    @objc public func stop() {
         self.invalidateStopTimer()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
