@@ -8,24 +8,24 @@
 import Foundation
 import StoreKit
 
-protocol NZPurchaserDelegate: class {
+public protocol NZPurchaserDelegate: class {
     func purchaser(_ purchaser: NZPurchaser, didDeferTransaction transaction: SKPaymentTransaction)
     func purchaser(_ purchaser: NZPurchaser, didFailWithError error: Error)
     func purchaser(_ purchaser: NZPurchaser, didFinishRestoring queue: SKPaymentQueue)
     func purchaser(_ purchaser: NZPurchaser, didFinishTransaction transaction: SKPaymentTransaction, callback: (Bool) -> Void)
 }
 
-class NZPurchaser: NSObject {
+open class NZPurchaser: NSObject {
     
-    static let main = NZPurchaser()
+    public static let main = NZPurchaser()
     
-    var delegate: NZPurchaserDelegate?
+    public var delegate: NZPurchaserDelegate?
     
-    var isObserverSet = false
-    var isRestoring = false
-    var productIdentifier: String?
+    public var isObserverSet = false
+    public var isRestoring = false
+    public var productIdentifier: String?
     
-    func localizePrice(_ product: SKProduct) -> String {
+    public func localizePrice(_ product: SKProduct) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.formatterBehavior = .behavior10_4
         numberFormatter.numberStyle = .currency
@@ -33,7 +33,7 @@ class NZPurchaser: NSObject {
         return numberFormatter.string(from: product.price)!
     }
     
-    func observe() {
+    public func observe() {
         if self.isObserverSet {
             return
         }
@@ -41,7 +41,7 @@ class NZPurchaser: NSObject {
         SKPaymentQueue.default().add(self)
     }
     
-    func purchase(product: SKProduct) {
+    public func purchase(product: SKProduct) {
         var errorCode = 0
         var errorMessage = ""
         if !SKPaymentQueue.canMakePayments() {
@@ -79,7 +79,7 @@ class NZPurchaser: NSObject {
         self.productIdentifier = product.productIdentifier
     }
     
-    func restore() {
+    public func restore() {
         if self.isRestoring {
             return
         }
@@ -87,7 +87,7 @@ class NZPurchaser: NSObject {
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
-    func stopObserving() {
+    public func stopObserving() {
         if !self.isObserverSet {
             return
         }
@@ -132,17 +132,17 @@ class NZPurchaser: NSObject {
 
 extension NZPurchaser: SKPaymentTransactionObserver {
     
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+    public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         self.isRestoring = false
         self.delegate?.purchaser(self, didFinishRestoring: queue)
     }
     
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+    public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         self.isRestoring = false
         self.delegate?.purchaser(self, didFailWithError: error)
     }
     
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         transactions.forEach { (transaction) in
             switch transaction.transactionState {
             case .deferred:
