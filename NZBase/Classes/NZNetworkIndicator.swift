@@ -11,15 +11,29 @@ open class NZNetworkIndicator: NSObject {
     public static let shared = NZNetworkIndicator()
     var indicatorStopTimer: Timer?
     
+    func dispatchMainSync(_ block: () -> Void) {
+        if Thread.isMainThread {
+            block()
+        } else {
+            DispatchQueue.main.sync() { () -> Void in
+                block()
+            }
+        }
+    }
+    
     @objc public func forceStop() {
-        self.invalidateStopTimer()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        dispatchMainSync {
+            self.invalidateStopTimer()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
     
     public func start() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.invalidateStopTimer()
-        self.indicatorStopTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.forceStop), userInfo: nil, repeats: false)
+        dispatchMainSync {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.invalidateStopTimer()
+            self.indicatorStopTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.forceStop), userInfo: nil, repeats: false)
+        }
     }
     
     @objc public func stop() {
